@@ -4,7 +4,7 @@
 
 ## 概要 / Overview
 
-Activeにしている間、Google検索結果を1年以内のものに限定するChrome Extensionです。
+Activeにしている間、Google検索結果を6ヶ月以内のものに限定するChrome Extensionです。
 
 Active、非Activeはアイコンをクリックすることで切り替えられます。
 
@@ -33,7 +33,7 @@ chrome://settings/extensions
 ### Grunt を利用してのテスト
 
 ```sh
-cd chrome-ext-ato-ichinen
+cd since-6months
 npm install -g grunt-cli (既に install 済みの場合は不要)
 npm install
 grunt test
@@ -41,7 +41,7 @@ grunt test
 
 ## ライセンス / License
 
-Copyright &copy; 2012 Yuto-24
-Licensed under the [MIT License][mit]
+    Copyright &copy; 2024 Yuto-24
+    Licensed under the [MIT License][mit]
 
-[MIT]: http://www.opensource.org/licenses/mit-license.php
+    [MIT]: http://www.opensource.org/licenses/mit-license.php
