@@ -41,7 +41,7 @@ grunt test
 
 ## ライセンス / License
 
-    Copyright &copy; 2024 Yuto-24
-    Licensed under the [MIT License][mit]
+Copyright &copy; 2024 Yuto-24
+Licensed under the [MIT License][mit]
 
-    [MIT]: http://www.opensource.org/licenses/mit-license.php
+[MIT]: http://www.opensource.org/licenses/mit-license.php
