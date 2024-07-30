@@ -1,19 +1,21 @@
 {
-  "name": "since 6month ago",
-  "version": "1.0.1",
+  "name": "new_test",
+  "version": "0.0.0",
   "manifest_version": 3,
-  "description": "Activeにしている間、Google検索結果を6ヶ月以内のものに限定します。",
-  "background": {
-    "page": "app/background/background.html"
+  "description": "Just Test",
+  "icons": {
+    "16": "./img/icon/white_6/16.png",
+    "48": "./img/icon/white_6/48.png",
+    "128": "./img/icon/white_6/128.png"
   },
-  "browser_action": {
-    "default_icon": "app/icon/icon-19-off.png",
-    "default_title": "since 6month ago"
+  "action": {
+    "default_icon": "./img/icon/white_6/128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
   },
   "permissions": [
     "tabs"
-  ],
-  "icons": {
-    "128": "app/icon/icon-128.png"
-  }
+  ]
 }
