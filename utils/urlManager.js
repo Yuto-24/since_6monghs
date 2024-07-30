@@ -1,17 +1,6 @@
-/*!
- * urlManager JavaScript Library v0.1.1
- *
- * Copyright (c) 2012 amazedkoumei (Twitter: @amazedkoumei, Blog:http://blog.amazedkoumei.com)
- * Licensed under the MIT license + "keep this comment block even if you modify it".
- *
- * History:
- *  05-03-2012 new created
- *  05-06-2012 added getParam
- *  05-07-2012 modified isGoogle bugfix for google analytics and google calendar and more.
- */
-var urlManager = $({});
+var urlManager = {};
 
-$.extend(urlManager, {
+Object.assign(urlManager, {
   isGoogle: function(url) {
     return url.match(/https?:\/\/www\.google[^\/]+?(\/#|\/search|\/webhp|$)/) != null;
   },
@@ -22,9 +11,9 @@ $.extend(urlManager, {
     // アドレスバーではなくGoogle検索窓で複数ワード検索した時に区切り文字が+になる。
     // 検索ワード自体に含まれる+文字はURLエンコードされる（%2B）
     url = url.replace(/\+/g, " ");
-    
+
     url = decodeURIComponent(url);
-    if(url.match(quPattern) || url.match(qPattern)) {
+    if (url.match(quPattern) || url.match(qPattern)) {
       return RegExp.$1;
     } else {
       return "";
@@ -34,10 +23,28 @@ $.extend(urlManager, {
     var pattern = new RegExp("http.*\?(.*&)?" + name + "=(.+?)(&.*|#.*|$)");
 
     url = decodeURIComponent(url);
-    if(url.match(pattern)) {
+    if (url.match(pattern)) {
       return RegExp.$2;
     } else {
       return "";
     }
   }
 });
+
+// To create a custom event emitter (similar to jQuery's $({}) functionality):
+urlManager.events = {};
+urlManager.on = function(eventName, callback) {
+  if (!this.events[eventName]) {
+    this.events[eventName] = [];
+  }
+  this.events[eventName].push(callback);
+};
+urlManager.trigger = function(eventName, data) {
+  if (this.events[eventName]) {
+    this.events[eventName].forEach(function(callback) {
+      callback(data);
+    });
+  }
+};
+
+export default urlManager;

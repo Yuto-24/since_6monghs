@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function (grunt) {
+module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   require('time-grunt')(grunt);
 
@@ -8,11 +8,11 @@ module.exports = function (grunt) {
     app: 'app',
     dist: 'dist'
   };
-  
+
   grunt.initConfig({
-    
+
     config: config,
-    
+
     clean: {
       dist: {
         files: [{
@@ -34,18 +34,18 @@ module.exports = function (grunt) {
       },
       chrome: {
         options: {
-            open: false,
-            base: [
-                '<%= config.app %>'
-            ]
+          open: false,
+          base: [
+            '<%= config.app %>'
+          ]
         }
       },
       test: {
         options: {
           open: false,
           base: [
-              'test',
-              '<%= config.app %>'
+            'test',
+            '<%= config.app %>'
           ]
         }
       }
