@@ -1,8 +1,8 @@
 {
-  "name": "new_test",
-  "version": "1.1.0",
+  "name": "since 6 month ago ",
+  "version": "1.1.1",
   "manifest_version": 3,
-  "description": "Just Test",
+  "description": "When Active, the search results are since 6 months old.",
   "icons": {
     "16": "./img/icon/white_6/16.png",
     "48": "./img/icon/white_6/48.png",
