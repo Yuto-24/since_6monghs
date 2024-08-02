@@ -33,7 +33,7 @@ const checkAndUpdateUrl = (tabId, tab) => {
   // debug(`inside checkAndUpdateUrl ${tab.url}`);
   const originalUrl = tab.url;
 
-  if (urlManager.isGoogle(tab.url) && !urlManager.getParam(tab.url, "tbs") && !urlManager.getParam(tab.url, "url")) {
+  if (urlManager.isGoogle(tab.url) && !urlManager.getParam(tab.url, "url")) {
     let newUrl = cleaningUrl(originalUrl);
     if (statusManager.getStatus()) {
       newUrl += getDateParamsString()
