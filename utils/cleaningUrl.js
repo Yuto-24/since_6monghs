@@ -16,8 +16,6 @@ const cleaningUrl = (url) => {
   url = url.replace(/&sca_upv=[^&]*/g, "");
   url = url.replace(/&iflsig=[^&]*/g, "");
   url = url.replace(/&uact=[^&]*/g, "");
-  // del tag
-  url = url.replace(/#.*/g, "");
   // del date params
   url = url.replace(/&as_qdr=y1/g, "");
   url = url.replace(/&tbs=[^&]*/g, "");
